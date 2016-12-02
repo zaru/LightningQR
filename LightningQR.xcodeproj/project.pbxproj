@@ -12,6 +12,8 @@
 		45B9C9CE1DF112FE007BE807 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B9C9CD1DF112FE007BE807 /* ViewController.swift */; };
 		45B9C9D01DF112FE007BE807 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B9C9CF1DF112FE007BE807 /* Assets.xcassets */; };
 		45B9C9D31DF112FE007BE807 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B9C9D11DF112FE007BE807 /* Main.storyboard */; };
+		45F3DBC11DF1C44C009FA3B1 /* QrcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F3DBBF1DF1C44C009FA3B1 /* QrcodeViewController.swift */; };
+		45F3DBC21DF1C44C009FA3B1 /* QrcodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F3DBC01DF1C44C009FA3B1 /* QrcodeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		45B9C9CF1DF112FE007BE807 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45B9C9D21DF112FE007BE807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45B9C9D41DF112FE007BE807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45F3DBBF1DF1C44C009FA3B1 /* QrcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrcodeViewController.swift; sourceTree = "<group>"; };
+		45F3DBC01DF1C44C009FA3B1 /* QrcodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QrcodeViewController.xib; sourceTree = "<group>"; };
 		91F1A5FC52AB748417629B22 /* Pods-LightningQR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightningQR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LightningQR/Pods-LightningQR.debug.xcconfig"; sourceTree = "<group>"; };
 		D6728366F55D87B1578BC2D7 /* Pods-LightningQR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightningQR.release.xcconfig"; path = "Pods/Target Support Files/Pods-LightningQR/Pods-LightningQR.release.xcconfig"; sourceTree = "<group>"; };
 		F9E40AE0A3A5CC12AADAC6C9 /* Pods_LightningQR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightningQR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +77,8 @@
 				45B9C9CF1DF112FE007BE807 /* Assets.xcassets */,
 				45B9C9D11DF112FE007BE807 /* Main.storyboard */,
 				45B9C9D41DF112FE007BE807 /* Info.plist */,
+				45F3DBBF1DF1C44C009FA3B1 /* QrcodeViewController.swift */,
+				45F3DBC01DF1C44C009FA3B1 /* QrcodeViewController.xib */,
 			);
 			path = LightningQR;
 			sourceTree = "<group>";
@@ -149,6 +155,7 @@
 			files = (
 				45B9C9D01DF112FE007BE807 /* Assets.xcassets in Resources */,
 				45B9C9D31DF112FE007BE807 /* Main.storyboard in Resources */,
+				45F3DBC21DF1C44C009FA3B1 /* QrcodeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +216,7 @@
 			files = (
 				45B9C9CE1DF112FE007BE807 /* ViewController.swift in Sources */,
 				45B9C9CC1DF112FE007BE807 /* AppDelegate.swift in Sources */,
+				45F3DBC11DF1C44C009FA3B1 /* QrcodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,18 +13,23 @@ import Magnet
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var statusItem = NSStatusBar.system().statusItem(withLength: -2)
+    let popover = NSPopover()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         
         if let button = statusItem.button {
             button.image = NSImage(named: "StatusImage")
+            button.action = #selector(AppDelegate.togglePopover(sender:))
         }
         
         if let keyCombo = KeyCombo(keyCode: 11, carbonModifiers: 4352) {
             let hotKey = HotKey(identifier: "CommandControlB", keyCombo: keyCombo, target: self, action: #selector(hoge))
             hotKey.register() // or HotKeyCenter.shared.register(with: hotKey)
         }
+        
+        popover.behavior = .transient
+        popover.contentViewController = QrcodeViewController(nibName: "QrcodeViewController", bundle: nil)
         
     }
 
@@ -36,6 +41,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         print("hoge");
     }
     
+    func togglePopover(sender: AnyObject?) {
+        if popover.isShown {
+            closePopover(sender: sender)
+        } else {
+            showPopover(sender: sender)
+        }
+    }
+    
+    func showPopover(sender: AnyObject?) {
+        if let button = statusItem.button {
+            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+            NSApplication.shared().activate(ignoringOtherApps: true)
+        }
+    }
+    
+    func closePopover(sender: AnyObject?) {
+        popover.performClose(sender)
+    }
 
 }
 
