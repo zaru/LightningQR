@@ -10,27 +10,21 @@ import Cocoa
 import Magnet
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate, Validator, NSUserNotificationCenterDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, Validator {
 
     var statusItem = NSStatusBar.system().statusItem(withLength: -2)
     let popover = NSPopover()
     var changeCount: Int = 0
-    let MyNotification = "MyNotification"
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(AppDelegate.loadQrcodePopover(notification:)),
-                                               name: NSNotification.Name(rawValue: MyNotification),
-                                               object: nil)
         
         if let button = statusItem.button {
             button.image = NSImage(named: "StatusImage")
             button.action = #selector(AppDelegate.togglePopover(sender:))
         }
         
-        if let keyCombo = KeyCombo(keyCode: 11, carbonModifiers: 4352) {
-            let hotKey = HotKey(identifier: "CommandControlB", keyCombo: keyCombo, target: self, action: #selector(hoge))
+        if let keyCombo = KeyCombo(keyCode: 8, carbonModifiers: 4352) {
+            let hotKey = HotKey(identifier: "CommandControlC", keyCombo: keyCombo, target: self, action: #selector(showPopover))
             hotKey.register() // or HotKeyCenter.shared.register(with: hotKey)
         }
         
@@ -43,10 +37,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, Validator, NSUserNotificatio
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
-    }
-    
-    func hoge() {
-        print("hoge");
     }
     
     func togglePopover(sender: AnyObject?) {
@@ -96,12 +86,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, Validator, NSUserNotificatio
     }
     
     func pasteboardChanged(pboard:NSPasteboard) {
-        let str = pboard.string(forType: NSStringPboardType)!
-        if (validateURL(urlString: str)) {
-            print(str)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: self.MyNotification),
-                                            object: nil,
-                                            userInfo: ["url": str])
+        let url = pboard.string(forType: NSStringPboardType)!
+        if (validateURL(urlString: url)) {
+            let ud = UserDefaults.standard
+            ud.set(url, forKey: "url")
         }
         
     }
