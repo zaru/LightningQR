@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0A053D50B5ECA43B889C4D16 /* Pods_LightningQR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E40AE0A3A5CC12AADAC6C9 /* Pods_LightningQR.framework */; };
 		45B9C9CC1DF112FE007BE807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B9C9CB1DF112FE007BE807 /* AppDelegate.swift */; };
-		45B9C9CE1DF112FE007BE807 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B9C9CD1DF112FE007BE807 /* ViewController.swift */; };
 		45B9C9D01DF112FE007BE807 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B9C9CF1DF112FE007BE807 /* Assets.xcassets */; };
 		45B9C9D31DF112FE007BE807 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B9C9D11DF112FE007BE807 /* Main.storyboard */; };
 		45F3DBC11DF1C44C009FA3B1 /* QrcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F3DBBF1DF1C44C009FA3B1 /* QrcodeViewController.swift */; };
@@ -20,7 +19,6 @@
 /* Begin PBXFileReference section */
 		45B9C9C81DF112FE007BE807 /* LightningQR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightningQR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B9C9CB1DF112FE007BE807 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		45B9C9CD1DF112FE007BE807 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		45B9C9CF1DF112FE007BE807 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45B9C9D21DF112FE007BE807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45B9C9D41DF112FE007BE807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				45B9C9CB1DF112FE007BE807 /* AppDelegate.swift */,
-				45B9C9CD1DF112FE007BE807 /* ViewController.swift */,
 				45B9C9CF1DF112FE007BE807 /* Assets.xcassets */,
 				45B9C9D11DF112FE007BE807 /* Main.storyboard */,
 				45B9C9D41DF112FE007BE807 /* Info.plist */,
@@ -217,7 +214,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45B9C9CE1DF112FE007BE807 /* ViewController.swift in Sources */,
 				45F3DBC41DF1C5CB009FA3B1 /* Qrcode.swift in Sources */,
 				45B9C9CC1DF112FE007BE807 /* AppDelegate.swift in Sources */,
 				45F3DBC11DF1C44C009FA3B1 /* QrcodeViewController.swift in Sources */,

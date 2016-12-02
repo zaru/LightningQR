@@ -20,4 +20,7 @@ class QrcodeViewController: NSViewController {
         imgQrcode.image = qrcode
     }
     
+    @IBAction func terminate(_ sender: NSButton) {
+        NSApp.terminate(self)
+    }
 }
