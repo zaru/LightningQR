@@ -54,7 +54,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, Validator {
         }
     }
     
-    func closePopover(sender: AnyObject?) {
+    public func closePopover(sender: AnyObject?) {
+        print("close")
+        print(popover.isShown)
         popover.performClose(sender)
     }
     

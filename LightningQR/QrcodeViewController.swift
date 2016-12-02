@@ -23,4 +23,9 @@ class QrcodeViewController: NSViewController {
     @IBAction func terminate(_ sender: NSButton) {
         NSApp.terminate(self)
     }
+    
+    override func cancelOperation(_ sender: Any?) {
+        let appDelegate = NSApplication.shared().delegate as! AppDelegate
+        appDelegate.closePopover(sender: nil)
+    }
 }
