@@ -9,4 +9,5 @@ target 'LightningQR' do
 
   # Pods for LightningQR
   pod 'Magnet'
+  pod 'LoginServiceKit', :git => 'https://github.com/Clipy/LoginServiceKit.git'
 end

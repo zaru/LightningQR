@@ -1,12 +1,24 @@
 PODS:
+  - LoginServiceKit (1.0.0)
   - Magnet (2.0.0)
 
 DEPENDENCIES:
+  - LoginServiceKit (from `https://github.com/Clipy/LoginServiceKit.git`)
   - Magnet
 
+EXTERNAL SOURCES:
+  LoginServiceKit:
+    :git: https://github.com/Clipy/LoginServiceKit.git
+
+CHECKOUT OPTIONS:
+  LoginServiceKit:
+    :commit: cb1ca8b3c220447090dbee80cd88daf1b25fb71d
+    :git: https://github.com/Clipy/LoginServiceKit.git
+
 SPEC CHECKSUMS:
+  LoginServiceKit: 7433d75d42dd0d8047f2d428b2de453c58947d3d
   Magnet: b30d2807dd0d8a349ce4e6574ecefa38012d02ca
 
-PODFILE CHECKSUM: db8cd299999507a20b0738e6622ba9816e188c6c
+PODFILE CHECKSUM: 469aae9e60a2953ca136101479226104a68d6369
 
 COCOAPODS: 1.1.1

@@ -8,6 +8,7 @@
 
 import Cocoa
 import Magnet
+import LoginServiceKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, Validator {
@@ -17,6 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, Validator {
     var changeCount: Int = 0
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+
+        addingToLoginItems()
         
         if let button = statusItem.button {
             button.image = NSImage(named: "StatusImage")
@@ -37,6 +40,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, Validator {
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+    }
+    
+    func addingToLoginItems() {
+        let appPath = Bundle.main.bundlePath
+        LoginServiceKit.addLoginItems(at: appPath)
     }
     
     func togglePopover(sender: AnyObject?) {
