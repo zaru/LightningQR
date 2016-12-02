@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="QrcodeViewController" customModule="LightningQR" customModuleProvider="target">
             <connections>
+                <outlet property="imgQrcode" destination="6xD-xs-w7B" id="CGc-9X-gLA"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>

@@ -10,13 +10,19 @@ import Cocoa
 import Magnet
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, Validator, NSUserNotificationCenterDelegate {
 
     var statusItem = NSStatusBar.system().statusItem(withLength: -2)
     let popover = NSPopover()
+    var changeCount: Int = 0
+    let MyNotification = "MyNotification"
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(AppDelegate.loadQrcodePopover(notification:)),
+                                               name: NSNotification.Name(rawValue: MyNotification),
+                                               object: nil)
         
         if let button = statusItem.button {
             button.image = NSImage(named: "StatusImage")
@@ -30,6 +36,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         popover.behavior = .transient
         popover.contentViewController = QrcodeViewController(nibName: "QrcodeViewController", bundle: nil)
+        
+        beginObservingPasteboard()
         
     }
 
@@ -58,6 +66,44 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func closePopover(sender: AnyObject?) {
         popover.performClose(sender)
+    }
+    
+    func loadQrcodePopover(notification: NSNotification)  {
+        if let userInfo = notification.userInfo {
+            let url = userInfo["url"]! as! String
+            let ud = UserDefaults.standard
+            ud.set(url, forKey: "url")
+            showPopover(sender: nil)
+        }
+    }
+    
+    
+    func beginObservingPasteboard() {
+        self.changeCount = NSPasteboard.general().changeCount
+        Timer.scheduledTimer(timeInterval: 1.0,
+                             target: self,
+                             selector: #selector(observePasteboard),
+                             userInfo: nil,
+                             repeats: true)
+    }
+    
+    func observePasteboard() {
+        let pboard = NSPasteboard.general()
+        if (pboard.changeCount > self.changeCount) {
+            pasteboardChanged(pboard: pboard)
+        }
+        self.changeCount = pboard.changeCount
+    }
+    
+    func pasteboardChanged(pboard:NSPasteboard) {
+        let str = pboard.string(forType: NSStringPboardType)!
+        if (validateURL(urlString: str)) {
+            print(str)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: self.MyNotification),
+                                            object: nil,
+                                            userInfo: ["url": str])
+        }
+        
     }
 
 }
