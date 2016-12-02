@@ -13,7 +13,7 @@ import LoginServiceKit
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, Validator {
 
-    var statusItem = NSStatusBar.system().statusItem(withLength: -2)
+    var statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
     let popover = NSPopover()
     var changeCount: Int = 0
     
@@ -62,9 +62,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, Validator {
         }
     }
     
-    public func closePopover(sender: AnyObject?) {
-        print("close")
-        print(popover.isShown)
+    func closePopover(sender: AnyObject?) {
         popover.performClose(sender)
     }
     

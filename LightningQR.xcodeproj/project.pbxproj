@@ -126,7 +126,8 @@
 				TargetAttributes = {
 					45B9C9C71DF112FE007BE807 = {
 						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = TH5EXGHJTG;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -329,11 +330,15 @@
 			baseConfigurationReference = 91F1A5FC52AB748417629B22 /* Pods-LightningQR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TH5EXGHJTG;
 				INFOPLIST_FILE = LightningQR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.tofu-kun.LightningQR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9876bec2-66ad-4d6a-b647-905464d5ca28";
+				PROVISIONING_PROFILE_SPECIFIER = LightningQR;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -343,11 +348,15 @@
 			baseConfigurationReference = D6728366F55D87B1578BC2D7 /* Pods-LightningQR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TH5EXGHJTG;
 				INFOPLIST_FILE = LightningQR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.tofu-kun.LightningQR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c796646e-e72a-4057-b37d-ab52a1df17cd";
+				PROVISIONING_PROFILE_SPECIFIER = LightningQR;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
