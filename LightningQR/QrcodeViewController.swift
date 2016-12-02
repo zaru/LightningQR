@@ -17,9 +17,12 @@ class QrcodeViewController: NSViewController {
     
     override func viewDidAppear() {
         let ud = UserDefaults.standard
-        let url:String = ud.object(forKey: "url") as! String!
-        let qrcode = Qrcode().generateQR(url: url)
-        imgQrcode.image = qrcode
+        
+        let url = ud.object(forKey: "url")
+        if (url != nil) {
+            let qrcode = Qrcode().generateQR(url: url as! String)
+            imgQrcode.image = qrcode
+        }
     }
     
     @IBAction func terminate(_ sender: NSButton) {

@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, Validator {
     var changeCount: Int = 0
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-
+        
         addingToLoginItems()
         
         if let button = statusItem.button {
