@@ -9,11 +9,10 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate, Validator {
+class AppDelegate: NSObject, NSApplicationDelegate {
 
     var statusItem = NSStatusBar.system().statusItem(withLength: -2)
-    var changeCount: Int = 0
-
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         
@@ -21,37 +20,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, Validator {
             button.image = NSImage(named: "StatusImage")
         }
         
-        beginObservingPasteboard()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
     
-    func beginObservingPasteboard() {
-        self.changeCount = NSPasteboard.general().changeCount
-        Timer.scheduledTimer(timeInterval: 1.0,
-                             target: self,
-                             selector: #selector(observePasteboard),
-                             userInfo: nil,
-                             repeats: true)
-    }
-    
-    func observePasteboard() {
-        let pboard = NSPasteboard.general()
-        if (pboard.changeCount > self.changeCount) {
-            pasteboardChanged(pboard: pboard)
-        }
-        self.changeCount = pboard.changeCount
-    }
-    
-    func pasteboardChanged(pboard:NSPasteboard) {
-        let str = pboard.string(forType: NSStringPboardType)
-        print(str)
-        print(validateURL(urlString: str!))
-        
-    }
-
 
 }
 
