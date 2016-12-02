@@ -13,7 +13,9 @@ class QrcodeViewController: NSViewController {
     @IBOutlet weak var imgQrcode: NSImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewDidAppear() {
         let ud = UserDefaults.standard
         let url:String = ud.object(forKey: "url") as! String!
         let qrcode = Qrcode().generateQR(url: url)
