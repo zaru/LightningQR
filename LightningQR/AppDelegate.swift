@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Magnet
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -20,10 +21,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.image = NSImage(named: "StatusImage")
         }
         
+        if let keyCombo = KeyCombo(keyCode: 11, carbonModifiers: 4352) {
+            let hotKey = HotKey(identifier: "CommandControlB", keyCombo: keyCombo, target: self, action: #selector(hoge))
+            hotKey.register() // or HotKeyCenter.shared.register(with: hotKey)
+        }
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+    }
+    
+    func hoge() {
+        print("hoge");
     }
     
 

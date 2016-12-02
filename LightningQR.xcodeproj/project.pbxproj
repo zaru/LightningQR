@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A053D50B5ECA43B889C4D16 /* Pods_LightningQR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E40AE0A3A5CC12AADAC6C9 /* Pods_LightningQR.framework */; };
 		45B9C9CC1DF112FE007BE807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B9C9CB1DF112FE007BE807 /* AppDelegate.swift */; };
 		45B9C9CE1DF112FE007BE807 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B9C9CD1DF112FE007BE807 /* ViewController.swift */; };
 		45B9C9D01DF112FE007BE807 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B9C9CF1DF112FE007BE807 /* Assets.xcassets */; };
@@ -20,6 +21,9 @@
 		45B9C9CF1DF112FE007BE807 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45B9C9D21DF112FE007BE807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45B9C9D41DF112FE007BE807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91F1A5FC52AB748417629B22 /* Pods-LightningQR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightningQR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LightningQR/Pods-LightningQR.debug.xcconfig"; sourceTree = "<group>"; };
+		D6728366F55D87B1578BC2D7 /* Pods-LightningQR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightningQR.release.xcconfig"; path = "Pods/Target Support Files/Pods-LightningQR/Pods-LightningQR.release.xcconfig"; sourceTree = "<group>"; };
+		F9E40AE0A3A5CC12AADAC6C9 /* Pods_LightningQR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightningQR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +31,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A053D50B5ECA43B889C4D16 /* Pods_LightningQR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14CE9F8D2B65C019D81CCDA1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91F1A5FC52AB748417629B22 /* Pods-LightningQR.debug.xcconfig */,
+				D6728366F55D87B1578BC2D7 /* Pods-LightningQR.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		45B9C9BF1DF112FE007BE807 = {
 			isa = PBXGroup;
 			children = (
 				45B9C9CA1DF112FE007BE807 /* LightningQR */,
 				45B9C9C91DF112FE007BE807 /* Products */,
+				14CE9F8D2B65C019D81CCDA1 /* Pods */,
+				5430BDC9EB10C9494AF54C91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +77,14 @@
 			path = LightningQR;
 			sourceTree = "<group>";
 		};
+		5430BDC9EB10C9494AF54C91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F9E40AE0A3A5CC12AADAC6C9 /* Pods_LightningQR.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -68,9 +92,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45B9C9D71DF112FE007BE807 /* Build configuration list for PBXNativeTarget "LightningQR" */;
 			buildPhases = (
+				EF969A17F0E620B0F674E516 /* [CP] Check Pods Manifest.lock */,
 				45B9C9C41DF112FE007BE807 /* Sources */,
 				45B9C9C51DF112FE007BE807 /* Frameworks */,
 				45B9C9C61DF112FE007BE807 /* Resources */,
+				AD979B91B7FF36BC6D99C1CF /* [CP] Embed Pods Frameworks */,
+				F7E936CC1EAEC969A2F5B626 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,6 +153,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AD979B91B7FF36BC6D99C1CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LightningQR/Pods-LightningQR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF969A17F0E620B0F674E516 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F7E936CC1EAEC969A2F5B626 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LightningQR/Pods-LightningQR-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		45B9C9C41DF112FE007BE807 /* Sources */ = {
@@ -243,6 +318,7 @@
 		};
 		45B9C9D81DF112FE007BE807 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91F1A5FC52AB748417629B22 /* Pods-LightningQR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -256,6 +332,7 @@
 		};
 		45B9C9D91DF112FE007BE807 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6728366F55D87B1578BC2D7 /* Pods-LightningQR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -286,6 +363,7 @@
 				45B9C9D91DF112FE007BE807 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
